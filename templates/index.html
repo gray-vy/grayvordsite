@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <style>
+        body {
+            background: powderblue;
+            font-family: Arial;
+            text-align: center;
+        }
+        h1,h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        img {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        a {
+            display: block;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body style="background-color:powderblue;">
+<h1>Авторизация Ford AsBuild</h1>
+<h2>*by Grayvord</h2>
+    <form action="/login" method="POST">
+        <input type="text" name="Login" placeholder="Введите логин" required>
+        <br>
+        <input type="password" name="Password" placeholder="Введите пароль" required>
+        <br>
+
+        <!-- Кнопка для входа -->
+        <button type="submit">Войти</button>
+    </form>
+
+    <!-- Сообщение об ошибке -->
+    {% if error_message %}
+        <div class="error">{{ error_message }}</div>
+    {% endif %}
+
+    <br>
+<a href="http://127.0.0.1:5000/reg">Регистрация</a>
+<br>
+<img src="https://cs7.pikabu.ru/post_img/2017/11/09/7/og_og_151022740927838132.jpg" alt="Schoolsw3.com" width="400" height="200">
+
+</body>
+
+</html>
