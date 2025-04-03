@@ -49,13 +49,12 @@ def reg():
         password = request.form['Password']
         first_name = request.form['First Name']
         last_name = request.form['Last Name']
-        email = request.form['Email']  # Добавлено поле email
 
         # Проверка на пустые поля
-        if login != "" and password != "" and first_name != "" and last_name != "" and email != "":
+        if login != "" and password != "" and first_name != "" and last_name != "":
             conn = get_db_connection()
-            conn.execute('INSERT INTO users (login, password, firstname, lastname, email) VALUES (?, ?, ?, ?, ?)',
-                         (login, password, first_name, last_name, email))
+            conn.execute('INSERT INTO users (login, password, firstname, lastname) VALUES (?, ?, ?, ?)',
+                         (login, password, first_name, last_name))
             conn.commit()
             conn.close()
             return redirect(url_for('login'))  # Перенаправление на страницу логина
